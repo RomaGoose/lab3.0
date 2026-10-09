@@ -27,7 +27,7 @@ public:
         other.ptr_ = nullptr;
     };
     uniq_ptr& operator=(uniq_ptr<T>&& other) noexcept {
-        if(ptr_ != other.get()){
+        if(this != &other){
             free_mem();
             ptr_ = other.ptr_;
             other.ptr_ = nullptr;
