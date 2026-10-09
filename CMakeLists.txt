@@ -17,10 +17,19 @@ add_executable(tests
   tests/shar_test.cpp
 )
 
+add_executable(bench
+  main.cpp
+)
+
 target_compile_options(tests PRIVATE -fsanitize=address,undefined)
+target_compile_options(bench PRIVATE -O3 -DNDDEBUG)
 target_link_options(tests PRIVATE -fsanitize=address,undefined)
 
 target_include_directories(tests PRIVATE
+    ${PROJECT_SOURCE_DIR}/include
+)
+
+target_include_directories(bench PRIVATE
     ${PROJECT_SOURCE_DIR}/include
 )
 
