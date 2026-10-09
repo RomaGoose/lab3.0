@@ -13,7 +13,8 @@ FetchContent_Declare(
 FetchContent_MakeAvailable(Catch2)
 
 add_executable(tests
-    tests/uniq_test.cpp
+  tests/uniq_test.cpp
+  tests/shar_test.cpp
 )
 
 target_compile_options(tests PRIVATE -fsanitize=address,undefined)

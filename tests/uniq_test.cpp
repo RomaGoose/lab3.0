@@ -7,6 +7,8 @@
 
 #include "uniq.hpp"
 
+namespace {
+    
 template<typename T>
 concept has_deref = requires(T& t) {
     *t;
@@ -44,6 +46,8 @@ struct Fixture {
         Tracker::deleted = 0;
     }
 };
+
+}
 
 // =============================================================================
 // uniq_ptr<T>
